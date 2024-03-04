@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>회원가입 신청</title>
+<script lsnguage = "javascript">
+function check_ID()		// 아이디 중복 체크 페이지 호출 함수
+{
+	var id = eval(document.regForm.id);
+	var url = "check_id.jsp" + "?id=" + id.value;
+
+	window.open(url, "checkID", "width=370, height=10");
+}
+</script>
+</head>
+
+<body>
+<form name="regForm" method="post" action="registration_ok.jsp">
+<hr>
+<h2 align="center">파일 시스템을 이용한 게시판</h2>
+<hr><br><br>
+  <table width="383" border="0" align="center" cellpadding="3">
+    <tr> 
+      <td height="50" colspan="2" align="center" bgcolor="#0099CC"><b>회원가입 
+        신청서</b></td>
+    </tr>
+    <tr> 
+      <td width="124" bgcolor="#99CCFF">이름</td>
+      <td width="242" bgcolor="#E0DFF9"> <input name="name" type="text" id="name"> 
+      </td>
+    </tr>
+    <tr>  
+      <td bgcolor="#99CCFF">학번</td>
+      <td bgcolor="#E0DFF9"><input name="number" type="text" id="number"> </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#99CCFF">희망 아이디</td>
+      <td bgcolor="#E0DFF9"><input name="id" type="text" id="id"> 
+      <input name="check_id" type="button" id="check_id" value="중복확인" onClick="check_ID()"></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#99CCFF">비밀번호</td>
+      <td bgcolor="#E0DFF9"><input name="pw" type="password" id="pw"></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#99CCFF">이메일 주소</td>
+      <td bgcolor="#E0DFF9"><input name="email" type="text" id="email"></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#99CCFF">C·P 번호</td>
+      <td bgcolor="#E0DFF9"><select name="cpNum1" id="cpNum1">
+          <option value="010" selected>010</option>
+          <option value="011">011</option>
+          <option value="016">016</option>
+          <option value="017">017</option>
+		  <option value="017">018</option>
+          <option value="019">019</option>
+        </select>
+        - 
+        <input name="cpNum2" type="text" id="cpNum2" size="4" maxlength="4">
+        - 
+        <input name="cpNum3" type="text" id="cpNum3" size="4" maxlength="4">
+      </td>
+    </tr>
+    <tr> 
+      <td height="50" colspan="2" align="center"><input type="submit" name="Submit" value="전송"> 
+        <input name="reset" type="reset" id="reset" value="취소"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+
